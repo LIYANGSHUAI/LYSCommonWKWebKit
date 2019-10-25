@@ -8,7 +8,7 @@
 
 #import "LYSCommonWKWebBridge.h"
 
-@interface LYSCommonWKWebBridge ()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
+@interface LYSCommonWKWebBridge ()
 @property (nonatomic, strong) NSMutableDictionary *actionDict;
 @end
 

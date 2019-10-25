@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LYSCommonWKWebAPIDelegate <NSObject>
 
+// 监听alert等操作
 @optional
 - (void)webView:(LYSCommonWKWeb *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler;
 - (void)webView:(LYSCommonWKWeb *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler;
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LYSCommonWKWebLifeDelegate <NSObject>
 
+// 简单的实现生命周期操作
 @optional
 - (void)webView:(LYSCommonWKWeb *)webView didStartProvisionalNavigation:(WKNavigation *)navigation;
 - (void)webView:(LYSCommonWKWeb *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error;

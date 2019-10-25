@@ -31,7 +31,7 @@
 
 @end
 
-@interface LYSCommonWKWebAPI ()<WKScriptMessageHandler>
+@interface LYSCommonWKWebAPI ()
 
 @end
 

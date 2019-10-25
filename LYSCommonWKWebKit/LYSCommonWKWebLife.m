@@ -8,7 +8,7 @@
 
 #import "LYSCommonWKWebLife.h"
 
-@interface LYSCommonWKWebLife ()<WKUIDelegate,WKNavigationDelegate>
+@interface LYSCommonWKWebLife ()
 
 @end
 
@@ -34,6 +34,7 @@
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
+    [super webView:webView didStartProvisionalNavigation:navigation];
     if (self.lifeDelegate && [self.lifeDelegate respondsToSelector:@selector(webView:didStartProvisionalNavigation:)]) {
         [self.lifeDelegate webView:(LYSCommonWKWeb *)self didStartProvisionalNavigation:navigation];
     }
@@ -41,6 +42,7 @@
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
+    [super webView:webView didFailProvisionalNavigation:navigation withError:error];
     if (self.lifeDelegate && [self.lifeDelegate respondsToSelector:@selector(webView:didFailProvisionalNavigation:withError:)]) {
         [self.lifeDelegate webView:(LYSCommonWKWeb *)self didFailProvisionalNavigation:navigation withError:error];
     }
@@ -48,6 +50,7 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
+    [super webView:webView didFinishNavigation:navigation];
     if (self.lifeDelegate && [self.lifeDelegate respondsToSelector:@selector(webView:didFinishNavigation:)]) {
         [self.lifeDelegate webView:(LYSCommonWKWeb *)self didFinishNavigation:navigation];
     }
